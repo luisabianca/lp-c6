@@ -30,6 +30,10 @@
         .btn.btn-warning.btn-banner {
             background: linear-gradient(105.23deg, #FFE552 0%, #FFCE2E 100%);
             border-radius: 64px;
+            width: 256px;
+            height: 48px;
+            font-family: 'C6 Sans Text';
+            font-size: 16px;
         }
 
         .title-banner {
@@ -55,6 +59,40 @@
             font-family: 'C6 Sans Text';
             font-size: 16px;
             width: 256px;
+            height: 48px;
+        }
+
+        .c6-brand {
+            height: 24px;
+            width: 120px;
+
+        }
+
+        .btn-header {
+            border: #EDEDED;
+            border-radius: 64px;
+            border-collapse: collapse;
+            margin-top: 48px;
+            border: 1px solid #fbfbfb;
+            font-family: 'C6 Sans Text';
+            font-size: 16px;
+            width: 256px;
+            color: #fbfbfb;
+            font-weight: 100;
+            height: 48px;
+        }
+
+        .btn-header:hover {
+            border: #EDEDED;
+            border-radius: 64px;
+            border-collapse: collapse;
+            margin-top: 48px;
+            border: 1px solid #fbfbfb;
+            font-family: 'C6 Sans Text';
+            font-size: 16px;
+            width: 256px;
+            color: #fbfbfb;
+            font-weight: 100;
             height: 48px;
         }
 
@@ -101,6 +139,18 @@
             
         }
 
+        .navbar-default .navbar-brand{
+            color: #fbfbfb;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: #fbfbfb
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover {
+            color: #fbfbfb
+        }
+
         .icon-ubisoft {
             margin-top: 102px;
             margin-bottom: 18px;
@@ -111,7 +161,7 @@
             font-family: 'C6 Sans Display';
             font-size: 48px;
             color: #242424;
-            padding-top: 80px;
+            margin-top: 36px;
         }
         
         .texto-c6-ubisoft {
@@ -171,7 +221,7 @@
         .title-jogo {
             font-size: 18px;
             font-family: 'C6 Sans Text';
-            width: 358px;
+            width: 96%;
         }
 
         .aviso-disponibilidade {
@@ -181,7 +231,7 @@
         }
 
         .header {
-            background-image: url('/images/banner.png');
+            background-image: url('images/banner.png');
             height: 720px;
         }
 
@@ -256,6 +306,16 @@
         
         .accordion-holder .accordion {
             border-bottom: solid 1px #ccc;
+        }
+
+        .accordion-icons {
+            margin-right: 20px;
+        }
+
+        .accordion-answer {
+            font-family: 'C6 Sans Text';
+            font-size: 16px;
+            margin-bottom: 28px;
         }
 
         .title-faq {
@@ -394,6 +454,10 @@
         .container.form {
             padding: 0;
         }
+
+        .ubisoft-brand {
+            margin-top: 200px;
+        }
         
         @media screen and (max-width: 992px) {
             .redes-sociais a {
@@ -446,6 +510,71 @@
             .py-5 {
                 padding-bottom: 1rem!important;
             }
+
+            .icon-ubisoft {
+                margin-top: 5px;
+            }
+
+            .texto-c6-ubisoft {
+                margin-bottom: 54px;
+            }
+
+            .subtitle-c6-ubisoft {
+                margin-bottom: 50px;
+                margin-top: 16px;
+            }
+
+            .boxes-games {
+                margin-bottom: 48px;
+            }
+
+            .title-jogos-mes {
+                padding-top: 48px;
+            }
+
+            .subtitle-resgate {
+                margin-bottom: 64px;
+            }
+
+            .select-game-p {
+                margin-bottom: 32px;
+            }
+
+            .form-check.form-check-inline.nome-jogo {
+                margin-bottom: 16px;
+            }
+
+            .cpf-label {
+                margin-top: 48px;
+            }
+
+            .termos-checkbox {
+                margin-top: 32px;
+                margin-right: 10px;
+                margin-bottom: 48px;
+            }
+
+            .btn-resgatar {
+                margin-top: 0;
+                align-items: center;
+            }
+
+            .pai-btn-resgatar {
+                display: flex;
+                justify-content: center;
+                
+            }
+
+            .title-faq {
+                padding-top: 48px;
+                font-size: 28px;
+            }
+        }
+
+        @media screen and (max-width: 424px) { 
+            .boxes-games {
+                margin: 0 auto;
+            }
         }
         
     </style>
@@ -456,16 +585,16 @@
 
     <div class="container-fluid header">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="app-container">
-                  <a class="navbar-brand" href="#">C6BANK</a>
+            <nav class="navbar-default navbar-expand-lg navbar-light">
+                <div class="app-container col-md-12">
+                  <img src="images/c6-brand.png" alt="">
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Pessoa Física</a>
+                            <a class="nav-link" aria-current="page" href="#">Pessoa Física</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Pessoa Jurídica</a>
@@ -477,17 +606,19 @@
                             <a class="nav-link" href="#">Tire suas dúvidas</a>
                         </li>
                         <li class="d-flex">
-                            <button type="button" class="btn btn-link">Abra sua conta</button>
+                            <button type="button" class="btn btn-link btn-header">ABRA SUA CONTA</button>
                         </li>             
                         </ul>                   
                   </div>
                 </div>
             </nav>
 
-            <p class="ubisoft-brand">UBISOFT</p>
-            <h1 class="title-banner">Ser C6 Bank é GG</h1>
-            <p class="subtitle-banner">Good Game é assim: cliente C6 Bank tem acesso a itens para <br> seus games da Ubisoft sem pagar nada por isso</p>
-            <button type="button" class="btn btn-warning btn-banner">SAIBA MAIS</button>
+            <div class="text-banner col-md-12 ml-0">
+                <img class="ubisoft-brand" src="images/Ubisoft.png" alt="">
+                <h1 class="title-banner">Ser C6 Bank é GG</h1>
+                <p class="subtitle-banner">Good Game é assim: cliente C6 Bank tem acesso a itens para <br> seus games da Ubisoft sem pagar nada por isso</p>
+                <button type="button" class="btn btn-warning btn-banner">SAIBA MAIS</button>
+            </div>
         </div>
     </div>
 
@@ -498,30 +629,28 @@
                 <p class="subtitle-c6-ubisoft">Benefício exclusivo para cliente C6 Bank em jogos diferentes da <br>Ubisoft todo mês</p>   
     
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <img  class="icon-ubisoft" src="images/touch_icon.png" alt="">
-                        <p class="texto-c6-ubisoft ">Aproveite itens especiais para <br> usar no game do mês</p>
+                        <p class="texto-c6-ubisoft ">Aproveite itens especiais para usar no game do mês</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <img  class="icon-ubisoft" src="images/videogame_asset.png" alt="">
-                        <p class="texto-c6-ubisoft ">A cada mês, um jogo diferente <br> para você aproveitar</p>
+                        <p class="texto-c6-ubisoft ">A cada mês, um jogo diferente para você aproveitar</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <img class="icon-ubisoft" src="images/pencil_icon.png" alt="">
-                        <p class="texto-c6-ubisoft ">É fácil: basta preencher o <br> cadastro e resgatar seu código</p>
+                        <p class="texto-c6-ubisoft ">É fácil: basta preencher o cadastro e resgatar seu código</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
     <div class="app-container jogosmes">
         <h1 class="title-jogos-mes text-center">Jogos de junho/julho</h1>
         <p class="subtitle-jogos-mes text-center">Período de resgate de <strong>25 de junho</strong> até <strong>18 de julho</strong></p>
 
-    
-        <div class="row boxes-games">
+        <div class="row boxes-games col-md-12 col-sm-11">
             <div class="boxgame col-md-5">
                 <div>
                     <div class="text-center">
@@ -582,7 +711,7 @@
                             Li e concordo com os <span class="text-decoration-underline">Termos de Uso e Política de Privacidade</span> 
                         </label>
                     </div>    
-                    <div class="col-md-4">
+                    <div class="col-md-4 pai-btn-resgatar">
                         <button type="button" class="btn-resgatar btn btn-warning">RESGATAR AGORA</button>
                     </div>
                 </div>
@@ -596,9 +725,9 @@
         <div class="accordion accordion-holder">
             <div class="accordion__title">
                 <div>
-                    asdasfas
+                    This is a opened FAQ category
                 </div>
-                <div>
+                <div class="accordion-icons">
                     <i class="fa fa-times"></i>
                     <i class="fa fa-plus"></i>
                 </div>
@@ -607,61 +736,74 @@
                 <div class="accordion">
                     <div class="accordion__title">
                         <div>
-                            asdasfas
+                            This is a opened FAQ question
                         </div>
                         <div>
-                            <i class="fa fa-chevron-down"></i>
+                            <i class="fa fa-chevron-down accordion-icons"></i>
                         </div>
                     </div>
                     <div class="accordion__content">
-                        <div class="accordion">
-                            <div class="accordion__title">
-                                <div>
-                                    asdasfas
-                                </div>
-                                <div>
-                                    <i class="fa fa-chevron-down"></i>
-                                </div>
-                            </div>
-                            <div class="accordion__content">
-                                content
-                            </div>  
-                        </div> 
+                        <div class="accordion-answer">
+                            This is a sample answer with 2 text lines just to fill some space on the layout. Now I'm just writing random words...
+
+                        </div>
                     </div>  
                 </div>
+            </div>
+            <div class="accordion__content">
                 <div class="accordion">
                     <div class="accordion__title">
                         <div>
-                            asdasfas
+                            This is a opened FAQ question
                         </div>
                         <div>
                             <i class="fa fa-chevron-down"></i>
                         </div>
                     </div>
                     <div class="accordion__content">
-                        <div class="accordion">
-                            <div class="accordion__title">
-                                <div>
-                                    asdasfas
-                                </div>
-                                <div>
-                                    <i class="fa fa-chevron-down"></i>
-                                </div>
-                            </div>
-                            <div class="accordion__content">
-                                content
-                            </div>  
-                        </div> 
+                        <div class="accordion-answer">
+                            This is a sample answer with 2 text lines just to fill some space on the layout. Now I'm just writing random words...
+
+                        </div>
                     </div>  
-                </div>  
+                </div>
+            </div>   
+        </div>
+        <div class="accordion accordion-holder">
+            <div class="accordion__title">
+                <div>
+                    This is a opened FAQ category
+                </div>
+                <div class="accordion-icons">
+                    <i class="fa fa-times"></i>
+                    <i class="fa fa-plus"></i>
+                </div>
+            </div>
+            <div class="accordion__content">
+                <div class="accordion">
+                    <div class="accordion__title">
+                        <div>
+                            This is a opened FAQ question
+                        </div>
+                        <div>
+                            <i class="fa fa-chevron-down accordion-icons"></i>
+                        </div>
+                    </div>
+                    <div class="accordion__content">
+                        <div class="accordion-answer">
+                            This is a sample answer with 2 text lines just to fill some space on the layout. Now I'm just writing random words...
+
+                        </div>
+                    </div>  
+                </div>
             </div>  
         </div>
         <div class="accordion accordion-holder">
             <div class="accordion__title">
                 <div>
-                    asdasfas
+                    This is a opened FAQ category
                 </div>
-                <div>
+                <div class="accordion-icons">
                     <i class="fa fa-times"></i>
                     <i class="fa fa-plus"></i>
                 </div>
@@ -670,60 +812,26 @@
                 <div class="accordion">
                     <div class="accordion__title">
                         <div>
-                            asdasfas
+                            This is a opened FAQ question
                         </div>
                         <div>
-                            <i class="fa fa-chevron-down"></i>
+                            <i class="fa fa-chevron-down accordion-icons"></i>
                         </div>
                     </div>
                     <div class="accordion__content">
-                        <div class="accordion">
-                            <div class="accordion__title">
-                                <div>
-                                    asdasfas
-                                </div>
-                                <div>
-                                    <i class="fa fa-chevron-down"></i>
-                                </div>
-                            </div>
-                            <div class="accordion__content">
-                                content
-                            </div>  
-                        </div> 
+                        <div class="accordion-answer">
+                            This is a sample answer with 2 text lines just to fill some space on the layout. Now I'm just writing random words...
+
+                        </div>
                     </div>  
                 </div>
-                <div class="accordion">
-                    <div class="accordion__title">
-                        <div>
-                            asdasfas
-                        </div>
-                        <div>
-                            <i class="fa fa-chevron-down"></i>
-                        </div>
-                    </div>
-                    <div class="accordion__content">
-                        <div class="accordion">
-                            <div class="accordion__title">
-                                <div>
-                                    asdasfas
-                                </div>
-                                <div>
-                                    <i class="fa fa-chevron-down"></i>
-                                </div>
-                            </div>
-                            <div class="accordion__content">
-                                content
-                            </div>  
-                        </div> 
-                    </div>  
-                </div>  
             </div>  
-        </div>
-                
+        </div>  
+        </div>         
     </div>
 
-    <div class="container-fluid footer ">
-        <div class="container">
+    <div class="container-fluid footer">
+        <div class="container col-md-12">
             <hr class="mb-5" />
             <div class="row">
                 <hr class="d-md-none " />
