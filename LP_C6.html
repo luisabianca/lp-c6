@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C6 Bank</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.c6bank.com.br/c6-sans/c6-sans.css">
+    <!-- CSS -->
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+
+        .app-container {
+            max-width: 905px;
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .btn.btn-warning.btn-banner {
+            background: linear-gradient(105.23deg, #FFE552 0%, #FFCE2E 100%);
+            border-radius: 64px;
+        }
+
+        .title-banner {
+            font-family: 'C6 Sans Display';
+            font-size: 72px;
+            color: #FBFBFB;
+            margin-bottom: 16px;
+            margin-top: 37px;
+        }
+
+        .subtitle-banner {
+            font-family: 'C6 Sans Display';
+            font-size: 24px;
+            color: #FBFBFB;
+            margin-bottom: 32px;
+        }
+
+        .btn-resgatar {
+            background: #EDEDED;
+            border: #EDEDED;
+            border-radius: 64px;
+            margin-top: 48px;
+            font-family: 'C6 Sans Text';
+            font-size: 16px;
+            width: 256px;
+            height: 48px;
+        }
+
+        .termos-checkbox {
+            display: flex;
+            align-items: center;
+            margin-top: 48px;
+            margin-bottom: 96px;
+            margin-right: 190px;
+            padding: 0;
+            margin-left: 36px;
+        }
+
+        .form-check.form-check-inline.nome-jogo {
+            margin-right: 60px;
+        }
+
+        .cpf-label {
+            margin-top: 72px;
+            margin-bottom: 16px;
+        }
+
+        .select-game-p {
+            font-family: 'C6 Sans Text';
+            font-size: 16px;
+            color: #242424;
+            margin-bottom: 24px;
+        }
+
+        .title-resgate {
+            padding-top: 80px;
+            font-family: 'C6 Sans Display';
+            font-size: 40px;
+            font-weight: lighter;
+            line-height: initial;
+            margin-bottom: 16px;
+        }
+
+        .subtitle-resgate {
+            color: rgba(36, 36, 36, 0.6);
+            font-family: 'C6 Sans Text';
+            font-size: 16px;
+            margin-bottom: 96px;
+            
+        }
+
+        .icon-ubisoft {
+            margin-top: 102px;
+            margin-bottom: 18px;
+            color: #000000;
+        }
+
+        .title-c6-ubisoft {
+            font-family: 'C6 Sans Display';
+            font-size: 48px;
+            color: #242424;
+            padding-top: 80px;
+        }
+        
+        .texto-c6-ubisoft {
+            font-family: 'C6 Sans Text';
+            font-size: 16px;
+            color: #242424;
+            margin-bottom: 88px;
+        }
+
+        .subtitle-c6-ubisoft {
+            font-family: 'C6 Sans Text';
+            font-size: 16px;
+            color: rgba(36, 36, 36, 0.6);
+        }
+
+        .title-jogos-mes {
+            font-family: 'C6 Sans Display';
+            font-size: 48px;
+            color: #242424;
+            padding-top: 88px;
+        }
+        
+        .subtitle-jogos-mes {
+            font-family: 'C6 Sans Text';
+            font-size: 16px;
+            color: rgba(36, 36, 36, 0.6);
+            margin-bottom: 64px;
+        }
+
+
+        .btn.btn-jogo {
+            font-family: 'C6 Sans Text';
+            font-size: 12px;
+            max-width: 176px;
+            border-radius: 64px;
+            height: 32px;
+            background: linear-gradient(105.23deg, #FFE552 0%, #FFCE2E 100%);
+            margin-bottom: 16px;
+        }
+
+        .btn.btn-jogo.odyssey {
+            font-family: 'C6 Sans Text';
+            font-size: 12px;
+            max-width: 176px;
+            border-radius: 64px;
+            height: 32px;
+            background: linear-gradient(105.23deg, #FFE552 0%, #FFCE2E 100%);
+            margin-bottom: 16px;
+        }
+
+        .itens-jogo {
+            font-family: 'C6 Sans Text';
+            font-size: 14px;
+            color: rgba(36, 36, 36, 0.6);
+        }
+
+        .title-jogo {
+            font-size: 18px;
+            font-family: 'C6 Sans Text';
+            width: 358px;
+        }
+
+        .aviso-disponibilidade {
+            font-size: 12px;
+            font-family: 'C6 Sans Text';
+            margin-bottom: 8px;
+        }
+
+        .header {
+            background-image: url('/images/banner.png');
+            height: 720px;
+        }
+
+        .boxes-games {
+            justify-content: center;
+            margin-bottom: 88px;
+        }
+
+        .img-jogo-valhalla {
+            width: 129px;
+            height: 179px;
+            margin-top: 70px;
+            margin-bottom: 40px;
+        }
+
+        .img-jogo-odyssey {
+            width: 94px;
+            height: 180px;
+            margin-top: 70px;
+            margin-bottom: 40px;
+        }
+
+        .boxgame {
+            background-color: #EDEDED;
+            margin: 1px;
+            max-width: 403px;
+            margin-right: 16px;
+            margin-left: 16px;
+        }
+
+        .accordion .accordion__title {
+            align-items: center;
+            padding: 14px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            font-family: 'C6 Sans Text';
+            font-size: 16px;
+            font-weight: bolder;
+            color: #242424;
+            height: 88px;
+            max-height: 88px;
+            margin-bottom: 2px;
+        }
+
+        .accordion-holder.accordion--active > .accordion__title {
+            background-color: #f5f5f5;
+        }
+
+        .accordion:not(.accordion--active) .accordion__content {
+            visibility: hidden;
+            overflow: hidden;
+            height: 0;
+            opacity: 0;
+        }
+
+        .accordion:not(.accordion--active) > .accordion__title div > .fa-times {
+            display: none;
+        }
+
+        .accordion.accordion--active > .accordion__title div > .fa-plus {
+            display: none;
+        }
+
+        .accordion.accordion--active > .accordion__title div > .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .accordion .accordion__content {
+            padding-left: 28px;
+        }
+        
+        .accordion-holder .accordion {
+            border-bottom: solid 1px #ccc;
+        }
+
+        .title-faq {
+            padding-top: 88px;
+            font-family: 'C6 Sans Display';
+            font-size: 48px;
+            font-weight: lighter;
+            line-height: initial;
+            margin-bottom: 68px;
+        }
+        
+        .footer {
+            background-color: #000000;
+            padding: 50px 0 10px;
+            margin-top: 80px;
+        }
+        
+        .titulo-footer {
+            font-family: 'C6 Sans Display';
+            font-size: 18px;
+            color: #FBFBFB;
+        }
+        
+        .texto-transparente {
+            opacity: 0;
+        }
+        
+        .plataformas a {
+            border-radius: 5px;
+            height: 42px;
+            width: 174px;
+            background-color: #323232;
+            text-align: center;
+            padding: 7px 0px;
+        }
+        
+        .texto-footer a {
+            display: block !important;
+            font-family: 'C6 Sans Text';
+            font-weight: 600;
+            font-size: 14px;
+            color: #fbfbfb;
+            margin-bottom: 16px;
+        }
+
+        .texto-footer-combg p {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            padding: 0 8px;
+            font-family: 'C6 Sans Text';
+            font-size: 14px;
+            color: #fbfbfb;
+            margin-bottom: 16px;
+            background: rgba(251, 251, 251, 0.12);
+            border-radius: 3px;
+            height: 29px;
+            width: fit-content;
+        }
+
+        .texto-footer-menor p {
+            display: block !important;
+            font-family: 'C6 Sans Text';
+            font-size: 16px;
+            color: rgba(252, 252, 252, 0.6);
+            margin-bottom: 16px;
+            font-weight: initial;
+        }
+        
+        .redes-sociais a {
+            font-family: 'C6 Sans Text';
+            font-weight: 600;
+            font-size: 16px;
+            color: #fbfbfb;
+            margin-bottom: 16px;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+        
+        .redes-sociais a:hover {
+            color: #ffffff;
+        }
+        
+        .redes-sociais a:first-child {
+            margin-left: 0px;
+        }
+        
+        .redes-sociais span {
+            display: none;
+        }
+        
+        hr {
+            width: 100%;
+            margin: 20px 15px;
+            height: 1px;
+            border-top: 1px solid #333333;
+        }
+        
+        .cnpj {
+            text-align: end;
+            font-family: 'C6 Sans Text';
+            font-weight: normal;
+            font-size: 14px;
+            color: rgba(252, 252, 252, 0.6);
+        }
+        
+        .box-termos a {
+            font-family: 'C6 Sans Text';
+            font-weight: normal;
+            font-size: 14px;
+            color: rgba(252, 252, 252, 0.6);
+            text-decoration: underline;
+            margin-right: 30px;
+            margin-top: 20px;
+        }
+
+        .bg-gray {
+            background-color: #fbfbfb;
+        }
+
+        .form-control {
+            display: block;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            background-color: #fbfbfb;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .form-check
+
+        .form-check-label.texto {
+            margin-left: 19px;
+        }
+
+        .container.form {
+            padding: 0;
+        }
+        
+        @media screen and (max-width: 992px) {
+            .redes-sociais a {
+                margin-left: 13px;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+
+            .boxgame {
+                margin-bottom: 16px;
+            }
+
+            .footer {
+                padding: 0px 0 10px;
+            }
+            .plataformas {
+                display: flex;
+                justify-content: space-between;
+            }
+            .plataformas a {
+                width: 48%;
+            }
+            .redes-sociais a {
+                margin-bottom: 16px;
+                font-size: 15px;
+                margin-left: 0px;
+                text-decoration: none;
+                display: block;
+            }
+            .redes-sociais a:hover {
+                color: #ffffff;
+            }
+            .redes-sociais span {
+                display: inline-block;
+                margin-left: 10px;
+            }
+            .titulo-footer {
+                margin-bottom: 10px;
+                font-size: 12px;
+            }
+            .box-termos {
+                flex-direction: column;
+            }
+            .box-termos a {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            .pb-5,
+            .py-5 {
+                padding-bottom: 1rem!important;
+            }
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="app-container">
+                  <a class="navbar-brand" href="#">C6BANK</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Pessoa Física</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pessoa Jurídica</a>
+                        </li>             
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">MEI</a>
+                        </li>             
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tire suas dúvidas</a>
+                        </li>
+                        <li class="d-flex">
+                            <button type="button" class="btn btn-link">Abra sua conta</button>
+                        </li>             
+                        </ul>                   
+                  </div>
+                </div>
+            </nav>
+
+            <p class="ubisoft-brand">UBISOFT</p>
+            <h1 class="title-banner">Ser C6 Bank é GG</h1>
+            <p class="subtitle-banner">Good Game é assim: cliente C6 Bank tem acesso a itens para <br> seus games da Ubisoft sem pagar nada por isso</p>
+            <button type="button" class="btn btn-warning btn-banner">SAIBA MAIS</button>
+        </div>
+    </div>
+
+    <div class="bg-gray">
+        <div class="app-container c6-ubisoft">
+            <div class="container">
+                <p class="title-c6-ubisoft"><h1>C6 Bank e Ubisoft: uma parceria GG </h1>
+                <p class="subtitle-c6-ubisoft">Benefício exclusivo para cliente C6 Bank em jogos diferentes da <br>Ubisoft todo mês</p>   
+    
+                <div class="row">
+                    <div class="col-md-3">
+                        <img  class="icon-ubisoft" src="images/touch_icon.png" alt="">
+                        <p class="texto-c6-ubisoft ">Aproveite itens especiais para <br> usar no game do mês</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img  class="icon-ubisoft" src="images/videogame_asset.png" alt="">
+                        <p class="texto-c6-ubisoft ">A cada mês, um jogo diferente <br> para você aproveitar</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img class="icon-ubisoft" src="images/pencil_icon.png" alt="">
+                        <p class="texto-c6-ubisoft ">É fácil: basta preencher o <br> cadastro e resgatar seu código</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="app-container jogosmes">
+        <h1 class="title-jogos-mes text-center">Jogos de junho/julho</h1>
+        <p class="subtitle-jogos-mes text-center">Período de resgate de <strong>25 de junho</strong> até <strong>18 de julho</strong></p>
+
+    
+        <div class="row boxes-games">
+            <div class="boxgame col-md-5">
+                <div>
+                    <div class="text-center">
+                        <img class="img-jogo-valhalla text-center" src="images/valhalla.png" alt="">
+                    </div>
+                    <p class="aviso-disponibilidade text-start">Disponível para todas as plataformas</p>
+                    <h6 class="title-jogo text-start">Assassin’s Creed Valhalla: Hearthweru Outfit Pack</h6>
+                    <p class="itens-jogo text-start">Itens do Pack: Elmo, Manto, Armadura, Braçadeiras, Calças</p>
+                    <div class="text-start">
+                        <button type="button" class="btn btn-jogo btn-warning">RESGATAR AGORA</button>
+                    </div>
+                </div>
+            </div>
+            <div class="boxgame col-md-5">
+                <div>
+                    <div class="text-center">
+                        <img class="img-jogo-odyssey" src="images/odyssey.png" alt="">
+                    </div>
+                    <p class="aviso-disponibilidade text-start">Disponível para todas as plataformas</p>
+                    <h6 class="title-jogo text-start">Assassin’s Creed Odyssey: Shark Outfit Set</h6>
+                    <p class="itens-jogo text-start">Itens do Set: Elmo, Armadura, Braçadeiras, Cinto, Botas</p>
+                    <div class="text-start">
+                        <button type="button" class="btn btn-jogo odyssey justify-content-start btn-warning">RESGATAR AGORA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-gray">
+        <div class="app-container resgate">
+            <div class="container">
+                <p class="title-resgate"><strong>Resgate agora</strong> seu código e <br> aproveite!</p>
+                <p class="subtitle-resgate fw-light">Lembrando que você pode resgatar 1 código por CPF por jogo</p>
+            </div>
+            <div class="container selectgames">
+                <p class="select-game-p">Selecione os jogos</p>
+                <div class="form-check form-check-inline nome-jogo">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label first-game" for="inlineRadio1">Assassin’s Creed Valhalla: Hearthweru Outfit Pack</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Assassin’s Creed Odyssey: Shark Outfit Set</label>
+                  </div>
+            </div>
+            <div class="container form">
+                <div class="col-md-11">
+                    <label for="exampleFormControlInput1" class="cpf-label form-label">CPF</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Informe o seu CPF">
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="termos-checkbox col-md-4 form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label texto" for="flexCheckDefault">
+                            Li e concordo com os <span class="text-decoration-underline">Termos de Uso e Política de Privacidade</span> 
+                        </label>
+                    </div>    
+                    <div class="col-md-4">
+                        <button type="button" class="btn-resgatar btn btn-warning">RESGATAR AGORA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="app-container faq">       
+        <p class="title-faq">Ficou com alguma dúvida? <br> <strong>Vamos te ajudar</strong></p>
+
+        <div class="accordion accordion-holder">
+            <div class="accordion__title">
+                <div>
+                    asdasfas
+                </div>
+                <div>
+                    <i class="fa fa-times"></i>
+                    <i class="fa fa-plus"></i>
+                </div>
+            </div>
+            <div class="accordion__content">
+                <div class="accordion">
+                    <div class="accordion__title">
+                        <div>
+                            asdasfas
+                        </div>
+                        <div>
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion__content">
+                        <div class="accordion">
+                            <div class="accordion__title">
+                                <div>
+                                    asdasfas
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="accordion__content">
+                                content
+                            </div>  
+                        </div> 
+                    </div>  
+                </div>
+                <div class="accordion">
+                    <div class="accordion__title">
+                        <div>
+                            asdasfas
+                        </div>
+                        <div>
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion__content">
+                        <div class="accordion">
+                            <div class="accordion__title">
+                                <div>
+                                    asdasfas
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="accordion__content">
+                                content
+                            </div>  
+                        </div> 
+                    </div>  
+                </div>  
+            </div>  
+        </div>
+        <div class="accordion accordion-holder">
+            <div class="accordion__title">
+                <div>
+                    asdasfas
+                </div>
+                <div>
+                    <i class="fa fa-times"></i>
+                    <i class="fa fa-plus"></i>
+                </div>
+            </div>
+            <div class="accordion__content">
+                <div class="accordion">
+                    <div class="accordion__title">
+                        <div>
+                            asdasfas
+                        </div>
+                        <div>
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion__content">
+                        <div class="accordion">
+                            <div class="accordion__title">
+                                <div>
+                                    asdasfas
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="accordion__content">
+                                content
+                            </div>  
+                        </div> 
+                    </div>  
+                </div>
+                <div class="accordion">
+                    <div class="accordion__title">
+                        <div>
+                            asdasfas
+                        </div>
+                        <div>
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion__content">
+                        <div class="accordion">
+                            <div class="accordion__title">
+                                <div>
+                                    asdasfas
+                                </div>
+                                <div>
+                                    <i class="fa fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="accordion__content">
+                                content
+                            </div>  
+                        </div> 
+                    </div>  
+                </div>  
+            </div>  
+        </div>
+                
+    </div>
+
+    <div class="container-fluid footer ">
+        <div class="container">
+            <hr class="mb-5" />
+            <div class="row">
+                <hr class="d-md-none " />
+                <div class="col-md-3 aplicativo ">
+                    <p class="titulo-footer ">BAIXE O APP</p>
+                    <div class="plataformas ">
+                        <a href="# " class="google d-md-block mb-2 "><img src="https://image.mail.c6bank.com.br/lib/fe38157075640575701371/m/8/5458a2de-91af-49ad-8ed1-370b1dd96dd2.png" width="100 " class="img-fluid " alt=" "></a>
+                        <a href="# " class="apple d-md-block "><img src="https://image.mail.c6bank.com.br/lib/fe38157075640575701371/m/8/6b07ce74-d9ec-4e65-be7a-971d6d8a9963.png" width="101 " class="img-fluid " alt=" "></a>
+                    </div>
+                    <div>
+                        <div class="redes-sociais mt-5 mt-md-4 ">
+                            <a href=" "><i class="fab fa-instagram "></i><span class="nome-rede ">Instagram</span></a><a href=" "><i class="fab fa-facebook-f "></i><span class="nome-rede ">Facebook</span></a><a href=" "><img src="images/tiktok.png" alt=""><span class="nome-rede ">Linkedin</span></a>
+                            <a href=" "><i class="fab fa-spotify "></i><span class="nome-rede ">Spotify</span></a>
+                        </div>
+                        <div class="redes-sociais mt-5 mt-md-4 ">
+                            <a href=" "><i class="fab fa-twitter "></i><span class="nome-rede ">Twitter</span></a><a href=" "><i class="fab fa-linkedin-in "></i><span class="nome-rede ">Linkedin</span></a>
+                            <a href=" "><i class="fab fa-youtube "></i><span class="nome-rede ">Youtube</span></a><a href=" "><i class="fab fa-medium-m "></i><span class="nome-rede ">Medium</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-4 mt-md-0 ">
+                    <p class="titulo-footer ">PESSOA FÍSICA</p>
+                    <div class="texto-footer "><a href=" ">C6 Store – Loja dentro do app com <br> cashback</a><a href=" ">Investimentos – CDBs, fundos e ações</a><a href=" ">Cartões – Crédito e débito</a><a href=" ">C6 Tag – Pedágio e estacionamento <br> sem filas</a><a href=" ">Átomos – Programa de pontos</a><a href=" "><u>Ver mais</u></a></div>
+                </div>
+                <div class="col-md-3 ">
+                    <p class="titulo-footer ">MEI</p>
+                    <div class="texto-footer "><a href=" ">Conta grátis</a><a href=" ">C6 Pay - Maquininha</a><a href=" ">Pix – Pagamentos instantâneos</a><a href=" ">C6 Tag – Pedágio e estacionamento <br> em filas</a><a href=" ">C6 Kick – Transferência via SMS</a></div>
+                </div>
+                <div class="col-md-3 mt-4 mt-md-0 ">
+                    <p class="titulo-footer ">PESSOA JURÍDICA</p>
+                    <div class="texto-footer "><a href=" ">Conta grátis</a><a href=" ">Web banking</a><a href=" ">C6 Pay – Maquininha</a></div>
+                </div>
+            </div>
+            <div class="row mt-3 mt-md-5 ">
+                <div class="col-md-3 ">
+                    <div class="texto-footer mb-5"><a href=" ">Trabalhe conosco</a><a href=" ">Documentos</a><a href=" ">Canal de transparência</a><a href=" ">Tire suas dúvidas</a></div>
+                    <p class="titulo-footer ">INICIATIVAS</p>
+                    <div class="texto-footer "><a href=" ">Impacto Social</a><a href=" ">OPP - Hub de startups</a><a href=" ">Conexão C6 - Consultores <br> empresariais</a></div>
+                </div>
+                <div class="col-md-3 ">
+                    <p class="titulo-footer mt-4 mt-md-0 ">FALE COM A GENTE</p>
+                    <div class="texto-footer-combg "><p>Já é cliente C6 Bank?</p></div>
+                    <div class="texto-footer "><a href=" ">Fale com a gente pelo chat do app!</a></div>
+                    <div class="texto-footer-combg mt-4 "><p>Ouvidoria</p></div>
+                    <div class="texto-footer-menor mb-0 "><p>9h às 18h (Seg. a sex., exceto feriados)</p></div>
+                    <div class="texto-footer mt-0"><a href=" ">0800 660 0060</a></div>
+                    <div class="texto-footer-combg mt-4"><p>SAC 24H</p></div>
+                    <div class="texto-footer mt-0"><a href=" ">0800 660 0060</a></div>
+                </div>
+                <div class="col-md-3 ">
+                    <div class="texto-footer-combg "><p>Central de relacionamento</p></div>
+                    <div class="texto-footer-menor mb-0 "><p>Capitais e regiões metropolitanas</p></div>
+                    <div class="texto-footer mt-0"><a href=" ">3003 6116</a></div>
+                    <div class="texto-footer-menor "><p>Demais localidades</p></div>
+                    <div class="texto-footer mt-0"><a href=" ">0800 660 6116</a></div>
+                    <div class="mt-5">
+                        <div class="texto-footer-combg mt-4 "><p>Assessoria de imprensa</p></div>
+                        <div class="texto-footer mt-0"><a href=" ">imprensa@c6bank.com</a></div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-4 mt-md-0 ">
+                    <div class="texto-footer-menor mt-5"><p>Whatsapp</p></div>
+                    <div class="texto-footer "><a href=" ">(11) 2832 6088</a></div>
+                    <div class="texto-footer-menor mt-5"><p>Fale conosco</p></div>
+                    <div class="texto-footer "><a href=" ">faleconosco@c6bank.com.br</a></div>
+                </div>
+            </div>
+            <div class="row ">
+                <hr />
+                <div class="col-md-6 order-2 order-md-2 mt-4 mt-md-0">
+                    <p class="cnpj mb-0">&copy; 2021 BANCO C6 S.A. CNPJ: 31.872.495/0001-72</p>
+                    <p class="cnpj">Av. Nove de Julho, 3186 - Jardim Paulista, São Paulo - 01406-000</p>
+                </div>
+                <div class="col-md-6 d-flex justify-content-start box-termos order-1 order-md-1 "><a href=" ">Tarifas</a><a href=" ">Termos de uso</a><a href=" ">Segurança no Uso da Internet</a></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script>
+        document.querySelectorAll('.accordion .accordion__title').forEach(function(acTitle) {
+            acTitle.addEventListener('click', function(event) {
+                var accordion = acTitle.parentElement;
+
+                if (accordion.classList.contains('accordion-holder')) {
+                    document.querySelectorAll('.accordion--active').forEach(function(openedAccordion) {
+                        openedAccordion.classList.remove('accordion--active');
+                    });
+                }
+
+                accordion.classList.add('accordion--active');
+            });
+        });
+    </script>
+</body>
+
+</html>
